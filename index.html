@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission | Nyad</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF5500;
+      --white: #ffffff;
+      --black: #000000;
+      --dim: rgba(255,255,255,0.45);
+      --border: #1a1a1a;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 64px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 54px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.08;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--dim);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid var(--border);
+      width: fit-content;
+    }
+
+    .meta-item {
+      padding: 14px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .meta-item:last-child { border-right: none; }
+
+    .meta-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 3px;
+    }
+
+    .meta-val {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── Section ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 64px;
+    }
+
+    /* ── Photo ── */
+    .photo-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 64px;
+    }
+
+    .photo-wrap + .section {
+      padding-top: 24px;
+    }
+
+    .photo {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center 0%;
+      display: block;
+      filter: brightness(0.6) saturate(0.7);
+    }
+
+    /* ── Side-by-side row ── */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .row.flip .row-right { order: -1; }
+
+    .row-text h2 {
+      font-size: clamp(20px, 2.6vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .row-text h2 span { color: var(--orange); }
+
+    .row-text p {
+      font-size: 14px;
+      color: var(--dim);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    .row-text p:last-child { margin-bottom: 0; }
+
+    .row-text p strong { color: var(--white); font-weight: 600; }
+
+    /* ── Three col grid ── */
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    .col-item {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .col-item:last-child { border-right: none; }
+
+    .col-num {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .col-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .col-desc {
+      font-size: 12px;
+      color: var(--dim);
+      line-height: 1.75;
+    }
+
+    /* ── Quote ── */
+    .quote {
+      border-left: 2px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin-top: 32px;
+    }
+
+    .quote p {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--white) !important;
+      line-height: 1.6;
+      margin-bottom: 10px !important;
+    }
+
+    .quote cite {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      font-style: normal;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .footer h4 {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+
+    .footer li {
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.9;
+      list-style: none;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 860px) {
+      .hero { padding: 64px 24px 56px; }
+      .section { padding: 56px 24px; }
+      .row { grid-template-columns: 1fr; gap: 32px; }
+      .row.flip .row-right { order: 0; }
+      .three-col { grid-template-columns: 1fr; }
+      .col-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .col-item:last-child { border-bottom: none; }
+      .footer { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
+      .meta-bar { flex-direction: column; width: 100%; }
+      .meta-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .meta-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div class="eyebrow">Mission</div>
+      <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); text-align: right; line-height: 1.8;">
+        Founded 2024<br>Birmingham, AL
+      </div>
+    </div>
+    <h1>An AI co-pilot for the operators who protect our <span>water.</span></h1>
+    <p class="hero-sub">
+      Nyad builds practical, operator-focused technology for industrial wastewater treatment - transforming one of the most critical and underserved jobs in infrastructure from manual and reactive to intelligent and proactive.
+    </p>
+  </div>
+
+  <!-- Photo -->
+  <div class="photo-wrap">
+    <img class="photo" src="wwtp-aerial.jpg" alt="Industrial wastewater treatment plant - aerial view">
+  </div>
+
+  <!-- Why It Matters -->
+  <div class="section">
+    <div class="row">
+      <div class="row-text">
+        <div class="eyebrow">The Problem</div>
+        <h2>Tools barely changed since the <span>1970s.</span></h2>
+        <p>
+          Industrial wastewater treatment is one of the most critical functions in modern infrastructure. The biology inside a treatment plant - the microorganisms breaking down contaminants - determines whether a facility stays in compliance or discharges toxins into a river.
+        </p>
+        <p>
+          But operators have almost no visibility into that biology. <strong>Traditional analysis requires sending samples to a lab and waiting days for results.</strong> By then, the problem has grown. Costs have increased. Compliance is at risk.
+        </p>
+        <p>
+          The operators told us they lack both the tools and the people. We set out to build both.
+        </p>
+      </div>
+      <div class="row-right">
+        <div class="eyebrow">What We Heard</div>
+        <div class="quote">
+          <p>"The biological aspects of water treatment were both the most challenging and the most neglected part of the process."</p>
+          <cite>Virginia Szepietowski - Co-Founder & CEO</cite>
+        </div>
+        <br>
+        <div class="quote">
+          <p>"The operators told me they lack both the tools and the people."</p>
+          <cite>Virginia Szepietowski - after months on-site at treatment facilities</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div class="section">
+    <div class="row flip">
+      <div class="row-text">
+        <div class="eyebrow">Our Vision</div>
+        <h2>Operators are the <span>heroes</span> of this story.</h2>
+        <p>
+          They are the final line of defense between toxic industrial wastewater and our precious waterways. That responsibility deserves world-class tools.
+        </p>
+        <p>
+          <strong>Nyad is named for the Naiad</strong> - ancient Greek guardians of rivers and freshwater. That name is a promise: to build technology worthy of the people protecting our water every day.
+        </p>
+        <p>
+          We envision a world where operators are empowered by the latest in AI - not replaced by it. Their expertise, combined with Nyad's intelligence, is how we get to a world of abundant clean water.
+        </p>
+      </div>
+      <div class="row-right">
+        <div class="eyebrow">What We're Building Toward</div>
+        <br>
+        <div class="meta-bar" style="flex-direction: column; width: 100%;">
+          <div class="meta-item" style="border-right: none; border-bottom: 1px solid var(--border);">
+            <div class="meta-label">Purpose</div>
+            <div class="meta-val">Create a world of abundant clean water</div>
+          </div>
+          <div class="meta-item" style="border-right: none; border-bottom: 1px solid var(--border);">
+            <div class="meta-label">Mission</div>
+            <div class="meta-val">Craft a practical, operator-focused AI co-pilot</div>
+          </div>
+          <div class="meta-item" style="border-right: none; border-bottom: 1px solid var(--border);">
+            <div class="meta-label">Vision</div>
+            <div class="meta-val">Operators: from reactive to intelligent and proactive</div>
+          </div>
+          <div class="meta-item" style="border-right: none;">
+            <div class="meta-label">Belief</div>
+            <div class="meta-val">Operators have thousands of problems. We have thousands of answers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

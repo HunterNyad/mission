@@ -1,0 +1,247 @@
+<style>
+  .nyad-mission {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nyad-mission * { box-sizing: border-box; }
+
+  .nyad-mission .nm-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FF5500;
+    margin-bottom: 12px;
+  }
+
+  .nyad-mission .nm-hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 64px 24px;
+  }
+
+  .nyad-mission .nm-hero h1 {
+    font-size: clamp(28px, 4vw, 54px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+    max-width: 780px;
+    margin-bottom: 24px;
+    color: #ffffff;
+  }
+
+  .nyad-mission .nm-hero h1 span { color: #FF5500; }
+
+  .nyad-mission .nm-hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  .nyad-mission .nm-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 64px;
+  }
+
+  .nyad-mission .nm-photo-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 64px;
+  }
+
+  .nyad-mission .nm-photo {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 0%;
+    display: block;
+    filter: brightness(0.6) saturate(0.7);
+  }
+
+  .nyad-mission .nm-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .nyad-mission .nm-row.flip .nm-row-right { order: -1; }
+
+  .nyad-mission .nm-row-text h2 {
+    font-size: clamp(20px, 2.6vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+
+  .nyad-mission .nm-row-text h2 span { color: #FF5500; }
+
+  .nyad-mission .nm-row-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .nyad-mission .nm-row-text p:last-child { margin-bottom: 0; }
+
+  .nyad-mission .nm-row-text p strong { color: #ffffff; font-weight: 600; }
+
+  .nyad-mission .nm-quote {
+    border-left: 2px solid #FF5500;
+    padding: 4px 0 4px 24px;
+    margin-top: 32px;
+  }
+
+  .nyad-mission .nm-quote p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .nyad-mission .nm-quote cite {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-style: normal;
+  }
+
+  .nyad-mission .nm-meta-bar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #1a1a1a;
+  }
+
+  .nyad-mission .nm-meta-item {
+    padding: 14px 24px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .nyad-mission .nm-meta-item:last-child { border-bottom: none; }
+
+  .nyad-mission .nm-meta-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FF5500;
+    margin-bottom: 3px;
+  }
+
+  .nyad-mission .nm-meta-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  @media (max-width: 860px) {
+    .nyad-mission .nm-hero { padding: 48px 24px 24px; }
+    .nyad-mission .nm-section { padding: 40px 24px; }
+    .nyad-mission .nm-photo-wrap { padding: 0 24px 24px; }
+    .nyad-mission .nm-row { grid-template-columns: 1fr; gap: 32px; }
+    .nyad-mission .nm-row.flip .nm-row-right { order: 0; }
+  }
+</style>
+
+<div class="nyad-mission">
+
+  <div class="nm-hero">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div class="nm-eyebrow">Mission</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-align:right;line-height:1.8;">
+        Founded 2024<br>Birmingham, AL
+      </div>
+    </div>
+    <h1>An AI co-pilot for the operators who protect our <span>water.</span></h1>
+    <p class="nm-hero-sub">
+      Nyad builds practical, operator-focused technology for industrial wastewater treatment - transforming one of the most critical and underserved jobs in infrastructure from manual and reactive to intelligent and proactive.
+    </p>
+  </div>
+
+  <div class="nm-photo-wrap">
+    <img class="nm-photo" src="https://hunternyad.github.io/mission/wwtp-aerial.jpg" alt="Industrial wastewater treatment plant - aerial view">
+  </div>
+
+  <div class="nm-section">
+    <div class="nm-row">
+      <div class="nm-row-text">
+        <div class="nm-eyebrow">The Problem</div>
+        <h2>Tools barely changed since the <span>1970s.</span></h2>
+        <p>
+          Industrial wastewater treatment is one of the most critical functions in modern infrastructure. The biology inside a treatment plant - the microorganisms breaking down contaminants - determines whether a facility stays in compliance or discharges toxins into a river.
+        </p>
+        <p>
+          But operators have almost no visibility into that biology. <strong>Traditional analysis requires sending samples to a lab and waiting days for results.</strong> By then, the problem has grown. Costs have increased. Compliance is at risk.
+        </p>
+        <p>
+          The operators told us they lack both the tools and the people. We set out to build both.
+        </p>
+      </div>
+      <div class="nm-row-right">
+        <div class="nm-eyebrow">What We Heard</div>
+        <div class="nm-quote">
+          <p>"The biological aspects of water treatment were both the most challenging and the most neglected part of the process."</p>
+          <cite>Virginia Szepietowski - Co-Founder & CEO</cite>
+        </div>
+        <div class="nm-quote" style="margin-top:24px;">
+          <p>"The operators told me they lack both the tools and the people."</p>
+          <cite>Virginia Szepietowski - after months on-site at treatment facilities</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nm-section">
+    <div class="nm-row flip">
+      <div class="nm-row-text">
+        <div class="nm-eyebrow">Our Vision</div>
+        <h2>Operators are the <span>heroes</span> of this story.</h2>
+        <p>
+          They are the final line of defense between toxic industrial wastewater and our precious waterways. That responsibility deserves world-class tools.
+        </p>
+        <p>
+          <strong>Nyad is named for the Naiad</strong> - ancient Greek guardians of rivers and freshwater. That name is a promise: to build technology worthy of the people protecting our water every day.
+        </p>
+        <p>
+          We envision a world where operators are empowered by the latest in AI - not replaced by it. Their expertise, combined with Nyad's intelligence, is how we get to a world of abundant clean water.
+        </p>
+      </div>
+      <div class="nm-row-right">
+        <div class="nm-eyebrow">What We're Building Toward</div>
+        <div class="nm-meta-bar" style="margin-top:20px;">
+          <div class="nm-meta-item">
+            <div class="nm-meta-label">Purpose</div>
+            <div class="nm-meta-val">Create a world of abundant clean water</div>
+          </div>
+          <div class="nm-meta-item">
+            <div class="nm-meta-label">Mission</div>
+            <div class="nm-meta-val">Craft a practical, operator-focused AI co-pilot</div>
+          </div>
+          <div class="nm-meta-item">
+            <div class="nm-meta-label">Vision</div>
+            <div class="nm-meta-val">Operators: from reactive to intelligent and proactive</div>
+          </div>
+          <div class="nm-meta-item">
+            <div class="nm-meta-label">Belief</div>
+            <div class="nm-meta-val">Operators have thousands of problems. We have thousands of answers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
